@@ -6,6 +6,6 @@ const middleware = require('../middleware')
 
 router.post('/login', AuthCtrl.Login)
 router.post('/register', AuthCtrl.Register)
-
+router.put("/:id", AuthCtrl.UpdatePassword)
 
 module.exports = router
