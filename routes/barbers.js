@@ -1,16 +1,27 @@
 const express = require('express')
 const router = express.Router()
 const barberCtrl = require("../controllers/barbers")
+const middleware = require('../middleware')
+
 
 router.get("/", barberCtrl.index)
-
-router.post("/", barberCtrl.create)
+    
+router.post("/", 
+    middleware.stripToken,
+    middleware.verifyToken,
+    barberCtrl.create)
 
 router.get("/:id", barberCtrl.show)
 
-router.delete("/:id", barberCtrl.delete)
+router.delete("/:id", 
+    middleware.stripToken,
+    middleware.verifyToken,
+    barberCtrl.delete)
 
-router.put("/:id", barberCtrl.update)
+router.put("/:id", 
+    middleware.stripToken,
+    middleware.verifyToken,
+    barberCtrl.update)
 
 
 module.exports = router

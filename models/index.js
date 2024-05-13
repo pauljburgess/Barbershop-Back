@@ -1,3 +1,4 @@
 module.exports = {
-    Barber: require('./Barber')
+    Barber: require('./Barber'),
+    User: require('./User')
 }

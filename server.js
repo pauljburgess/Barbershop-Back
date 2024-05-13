@@ -7,12 +7,17 @@ const cors = require('cors')
 const morgan = require('morgan')
 
 const barbersRouter = require('./routes/barbers')
+const AuthRouter = require('./routes/AuthRouter')
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors())
 app.use(morgan("dev"))
+
 app.use('/barbers', barbersRouter)
+app.use('/auth', AuthRouter)
+
+
 
 
 
