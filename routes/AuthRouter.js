@@ -5,7 +5,9 @@ const AuthCtrl =  require('../controllers/AuthController')
 const middleware = require('../middleware')
 
 router.post('/login', AuthCtrl.Login)
+
 router.post('/register', AuthCtrl.Register)
+
 router.put("/:id", 
     middleware.stripToken,
     middleware.verifyToken,

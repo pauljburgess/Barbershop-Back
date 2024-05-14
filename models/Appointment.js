@@ -10,4 +10,4 @@ const appointmentSchema = new Schema({
   time: Number,
 }, {timestamps: true})
 
-module.exports = mongoose.model("Barber", barberSchema)
+module.exports = mongoose.model("Appointment", appointmentSchema)

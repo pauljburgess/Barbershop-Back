@@ -8,6 +8,7 @@ const morgan = require('morgan')
 
 const barbersRouter = require('./routes/barbers')
 const servicesRouter = require('./routes/services')
+const appointmentsRouter = require('./routes/appointments')
 const AuthRouter = require('./routes/AuthRouter')
 
 app.use(express.urlencoded({extended:true}))
@@ -16,8 +17,10 @@ app.use(cors())
 app.use(morgan("dev"))
 
 app.use('/barbers', barbersRouter)
-app.use('/auth', AuthRouter)
 app.use('/services', servicesRouter)
+app.use('/appointments', appointmentsRouter)
+app.use('/auth', AuthRouter)
+
 
 
 
