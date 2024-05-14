@@ -69,11 +69,16 @@ const UpdatePassword = async (req, res) => {
 		console.log(error)
 		res.status(401).send({status: 'Error', msg: 'Something went wrong...'})
 	}
+}
 
+const CheckSession = async (req, res) => {
+	const { payload } = res.locals
+	res.send(payload)
 }
 
 module.exports = {
     Login,
     Register,
-	 UpdatePassword
+	UpdatePassword,
+	CheckSession,
 }
