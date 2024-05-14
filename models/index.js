@@ -1,4 +1,5 @@
 module.exports = {
     Barber: require('./Barber'),
-    User: require('./User')
+    User: require('./User'),
+    Service: require('./Service')
 }
