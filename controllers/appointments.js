@@ -1,5 +1,12 @@
 const { Appointment } = require('../models')
 
+const index = async (req, res, next) => {
+  try {
+      res.json(await Appointment.find({}))
+  } catch (error){
+      res.status(400).json(error)
+  }
+}
 
 const create = async (req, res, next) => {
     try {
@@ -26,7 +33,8 @@ const update = async (req, res, next) => {
 }
 
 module.exports = {
+    index,
     create,
-    delete: destroy,
+    delete: destroy, 
     update,
 }

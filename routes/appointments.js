@@ -7,8 +7,8 @@ const middleware = require('../middleware')
 router.get("/", appointmentsCtrl.index)
     
 router.post("/", 
-    middleware.stripToken,
-    middleware.verifyToken,
+    // middleware.stripToken,
+    // middleware.verifyToken,
     appointmentsCtrl.create)
 
 router.delete("/:id", 
