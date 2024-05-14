@@ -79,6 +79,6 @@ const CheckSession = async (req, res) => {
 module.exports = {
     Login,
     Register,
-	UpdatePassword,
-	CheckSession,
+		UpdatePassword,
+		CheckSession,
 }
