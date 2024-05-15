@@ -9,6 +9,7 @@ const morgan = require('morgan')
 const barbersRouter = require('./routes/barbers')
 const servicesRouter = require('./routes/services')
 const appointmentsRouter = require('./routes/appointments')
+const bookingsRouter = require('./routes/bookings')
 const AuthRouter = require('./routes/AuthRouter')
 
 app.use(express.urlencoded({extended:true}))
@@ -19,6 +20,7 @@ app.use(morgan("dev"))
 app.use('/barbers', barbersRouter)
 app.use('/services', servicesRouter)
 app.use('/appointments', appointmentsRouter)
+app.use('/bookings', bookingsRouter)
 app.use('/auth', AuthRouter)
 
 
