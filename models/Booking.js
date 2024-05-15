@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const bookingSchema = new Schema({
-  
-  name: { type: String, required: true },
 
-  Phone: { type: String, required: true },
+  name: String,
+
+  Phone: String,
 
   barber: [{
     type: Schema.Types.ObjectId,
