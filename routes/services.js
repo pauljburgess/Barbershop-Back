@@ -11,6 +11,8 @@ router.post("/",
     middleware.verifyToken,
     servicesCtrl.create)
 
+router.get("/:id", servicesCtrl.show)
+
 router.delete("/:id", 
     middleware.stripToken,
     middleware.verifyToken,

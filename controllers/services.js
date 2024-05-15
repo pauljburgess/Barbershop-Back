@@ -16,6 +16,14 @@ const create = async (req, res, next) => {
     }
 }
 
+const show = async (req, res, next) => {
+    try {
+        res.json(await Service.findById(req.params.id))
+    } catch (error) {
+        res.status(400).json(error)
+    }
+}
+
 const destroy = async (req, res, next) => {
     try {
         res.json(await Service.findByIdAndDelete(req.params.id))
@@ -35,6 +43,7 @@ const update = async (req, res, next) => {
 module.exports = {
     index,
     create,
+    show,
     delete: destroy,
     update,
 }
