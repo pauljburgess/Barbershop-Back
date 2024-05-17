@@ -19,8 +19,6 @@ router.delete("/:id",
     appointmentsCtrl.delete)
 
 router.put("/:id", 
-    middleware.stripToken,
-    middleware.verifyToken,
     appointmentsCtrl.update)
 
 
