@@ -2,6 +2,8 @@ require("dotenv").config()
 require('./config/db.connection')
 const { PORT } = process.env
 const express = require("express");
+const session = require('express-session');
+
 const app = express()
 const cors = require('cors')
 const morgan = require('morgan')
@@ -22,8 +24,21 @@ app.use('/services', servicesRouter)
 app.use('/appointments', appointmentsRouter)
 app.use('/bookings', bookingsRouter)
 app.use('/auth', AuthRouter)
+app.use(session({
+  secret: 'your-secret-key', // Important for security
+  resave: false,
+  saveUninitialized: false
+}));
 
-
+app.get('/', (req, res) => {
+  if (req.session.views) {
+    req.session.views++;
+    res.send(`You have visited this page ${req.session.views} times`);
+  } else {
+    req.session.views = 1;
+    res.send('Welcome to the session demo!');
+  }
+});
 
 
 

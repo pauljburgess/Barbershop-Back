@@ -5,7 +5,7 @@ const bookingSchema = new Schema({
 
   name: String,
 
-  Phone: String,
+  phone: String,
 
   barber: [{
     type: Schema.Types.ObjectId,
